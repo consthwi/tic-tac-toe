@@ -9,12 +9,15 @@ const initialGameBoard = [
 const GameBoard = ({ onSelectSquare, turns }) => {
   let gameBoard = initialGameBoard.map((row) => [...row]);
 
+  // turn은 [현재턴, 지난턴2, 지난턴1...] 상태
+  // 모든 item의 유효한 변수를 추출해서 렌더링 하는 것이 목적
   for (const turn of turns) {
     const { square, player } = turn;
     const { row, col } = square;
     gameBoard[row][col] = player;
   }
 
+  // 현재 턴 + 지난턴들 유효값 세팅
   // for (const turn of turns) {
   //   const square = turn.square;
   //   const player = turn.player;

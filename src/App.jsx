@@ -10,9 +10,17 @@ const deriveActivePlayer = (gameTurns) => {
     currentPlayer = "O";
   }
   return currentPlayer;
+  // GameBoard component에서 playerSymbol이 될 예정
 };
 
 function App() {
+  // 현재 gameTurns가 가진 정보
+  // [
+  //  {row col index, 현재플레이어},
+  //   + ...지난 턴2,
+  //   + ...지난 턴1
+  // ]
+
   const [gameTurns, setGameTurns] = useState([]);
   // const [activePlayer, setActivePlayer] = useState("X");
   // react에서는 최소한의 상태만을 사용하고,
